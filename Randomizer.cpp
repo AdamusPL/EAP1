@@ -25,7 +25,7 @@ Matrix* Randomizer::generate() {
         for (int j = 0; j < N; ++j) {
             if(i!=j && matrix->adjMatrix[i][j]==-1) {
                 distance = rand() % 100 + 1; // random number [1;100]
-                matrix->adjMatrix[i][j] = distance;
+                matrix->adjMatrix[i][j] = distance; //asymetric graph
             }
         }
     }
