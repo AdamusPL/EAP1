@@ -16,7 +16,7 @@ Matrix::Matrix(int nrV) {
         adjMatrix[i] = new int[nrV]; //
     }
 
-    nrV = nrV;
+    this->nrV = nrV;
 
 }
 

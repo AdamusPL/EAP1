@@ -5,9 +5,13 @@
 #ifndef PEA1_RANDOMIZER_H
 #define PEA1_RANDOMIZER_H
 #include <iostream>
+#include <cstdlib>     /* srand, rand */
+#include <ctime>       /* time */
+#include "Matrix.h"
 
 class Randomizer {
-    void generate();
+public:
+    Matrix* generate();
 };
 
 

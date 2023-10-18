@@ -4,7 +4,7 @@
 
 #include "FileReader.h"
 
-Matrix FileReader::read() {
+Matrix* FileReader::read() {
 
     std::string filename;
     std::cout << "Give the name of file" << std::endl;
@@ -18,7 +18,7 @@ Matrix FileReader::read() {
     if (file.is_open()) { //if the file is open
         file >> number;
 
-        Matrix matrix = Matrix(number); //create an object of Matrix
+        Matrix *matrix = new Matrix(number); //create an object of Matrix
 
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; ++j) {
@@ -28,7 +28,7 @@ Matrix FileReader::read() {
                 }
 
                 else {
-                    file >> matrix.adjMatrix[i][j]; //writing data to matrix
+                    file >> matrix->adjMatrix[i][j]; //writing data to matrix
                 }
             }
         }
@@ -42,6 +42,6 @@ Matrix FileReader::read() {
     }
 
     file.close();
-    return NULL;
+    return nullptr;
 
 }

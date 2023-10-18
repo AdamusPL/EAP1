@@ -4,12 +4,32 @@
 
 #include "Randomizer.h"
 
-void Randomizer::generate() {
+//generating random complete graph
+Matrix* Randomizer::generate() {
 
     int N;
+    int distance;
     std::cout<<"Enter N"<<std::endl;
     std::cin>>N;
+    Matrix *matrix = new Matrix(N);
 
+    srand(time(NULL));
 
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            matrix->adjMatrix[i][j]=-1;
+        }
+    }
+    
+    for(int i=0; i<N; i++){
+        for (int j = 0; j < N; ++j) {
+            if(i!=j && matrix->adjMatrix[i][j]==-1) {
+                distance = rand() % 100 + 1; // random number [1;100]
+                matrix->adjMatrix[i][j] = distance;
+            }
+        }
+    }
+
+    return matrix;
 
 }

@@ -11,7 +11,7 @@
 
 class FileReader {
 public:
-    Matrix read();
+    Matrix* read();
 };
 
 
