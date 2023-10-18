@@ -3,6 +3,7 @@
 #include "Randomizer.h"
 #include "Matrix.h"
 #include "TSPBruteForce.h"
+#include "Timer.h"
 
 int main() {
     int option=0;
@@ -53,9 +54,12 @@ int main() {
                     tab[i] = i;
                 }
 
+                Timer timer;
+                timer.startTimer();
                 tspBruteForce.launch(tab,0,matrix->nrV-1);
+                double time = timer.stopTimer();
 
-                std::cout<<"Wyniki:"<<std::endl;
+                std::cout<<"Scores:"<<std::endl;
                 for (int i = 0; i < matrix->nrV; ++i) {
                     std::cout << tspBruteForce.stringOfVerticles[i] << "->";
                 }
@@ -63,6 +67,7 @@ int main() {
 
                 std::cout << std::endl;
                 std::cout << tspBruteForce.bestRoute << std::endl;
+                std::cout << "Required time: " << time << std::endl;
 
                 break;
 

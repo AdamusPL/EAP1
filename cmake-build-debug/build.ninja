@@ -79,6 +79,12 @@ build CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj: CXX_COMPILER__PEA1_Debug C$:/Us
   OBJECT_DIR = CMakeFiles\PEA1.dir
   OBJECT_FILE_DIR = CMakeFiles\PEA1.dir
 
+build CMakeFiles/PEA1.dir/Timer.cpp.obj: CXX_COMPILER__PEA1_Debug C$:/Users/adamc/CLionProjects/PEA1/Timer.cpp || cmake_object_order_depends_target_PEA1
+  DEP_FILE = CMakeFiles\PEA1.dir\Timer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\PEA1.dir
+  OBJECT_FILE_DIR = CMakeFiles\PEA1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PEA1
@@ -87,7 +93,7 @@ build CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj: CXX_COMPILER__PEA1_Debug C$:/Us
 #############################################
 # Link the executable PEA1.exe
 
-build PEA1.exe: CXX_EXECUTABLE_LINKER__PEA1_Debug CMakeFiles/PEA1.dir/main.cpp.obj CMakeFiles/PEA1.dir/FileReader.cpp.obj CMakeFiles/PEA1.dir/Randomizer.cpp.obj CMakeFiles/PEA1.dir/Matrix.cpp.obj CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj
+build PEA1.exe: CXX_EXECUTABLE_LINKER__PEA1_Debug CMakeFiles/PEA1.dir/main.cpp.obj CMakeFiles/PEA1.dir/FileReader.cpp.obj CMakeFiles/PEA1.dir/Randomizer.cpp.obj CMakeFiles/PEA1.dir/Matrix.cpp.obj CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj CMakeFiles/PEA1.dir/Timer.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PEA1.dir
