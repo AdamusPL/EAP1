@@ -11,6 +11,7 @@
 class TSPBruteForce {
 public:
     TSPBruteForce(Matrix *matrix);
+    ~TSPBruteForce();
     void launch(int*, int, int);
     void perm(int*, int, int);
     Matrix* matrix;

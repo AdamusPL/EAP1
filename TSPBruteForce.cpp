@@ -10,77 +10,75 @@ TSPBruteForce::TSPBruteForce(Matrix *matrix) {
     this->bestRoute = INT_MAX;
 }
 
-void TSPBruteForce::launch(int tab[], int l, int r){
+TSPBruteForce::~TSPBruteForce() {
+    delete[] stringOfVerticles;
+}
+
+void TSPBruteForce::launch(int arr[], int l, int r){
     int route = 0;
     int x;
-    // Base case
+
     if (l == r) {
 //        printing all permutations
 //        for (int i = 0; i < matrix->nrV; ++i) {
-//            std::cout<<tab[i]<<" ";
+//            std::cout<<arr[i]<<" ";
 //        }
 //        std::cout<<std::endl;
 
         for(int i = 0; i < matrix->nrV - 1; i++){
-            route += matrix->adjMatrix[tab[i]][tab[i+1]];
+            route += matrix->adjMatrix[arr[i]][arr[i + 1]];
         }
 
-        route += matrix->adjMatrix[tab[matrix->nrV - 1]][tab[0]];
+        route += matrix->adjMatrix[arr[matrix->nrV - 1]][arr[0]];
 
         if(route < bestRoute){
             for (int i = 0; i < matrix->nrV; ++i) {
-                stringOfVerticles[i] = tab[i];
+                stringOfVerticles[i] = arr[i];
             }
             bestRoute = route;
         }
     }
     else {
-        // Permutations made
+
         for (int i = l; i <= r; i++) {
 
-            // Swapping done
-            x = tab[l];
-            tab[l] = tab[i];
-            tab[i] = x;
+            x = arr[l]; //swap
+            arr[l] = arr[i];
+            arr[i] = x;
 
-            // Recursion called
-            launch(tab, l + 1, r);
+            launch(arr, l + 1, r); //recursion
 
-            // backtrack
-            x = tab[l];
-            tab[l] = tab[i];
-            tab[i] = x;
+            x = arr[l]; //swap
+            arr[l] = arr[i];
+            arr[i] = x;
 
         }
     }
 
 }
 
-void TSPBruteForce::perm(int tab[], int l, int r){
+void TSPBruteForce::perm(int arr[], int l, int r){
     int x;
-    // Base case
+
     if (l == r) {
         for(int i=0; i<matrix->nrV; i++){
-            std::cout<<tab[i]<<" ";
+            std::cout << arr[i] << " ";
         }
         std::cout<<std::endl;
     }
     else {
-        // Permutations made
+
         for (int i = l; i <= r; i++) {
 
-            // Swapping done
-            x = tab[l];
-            tab[l] = tab[i];
-            tab[i] = x;
+            x = arr[l]; //swap
+            arr[l] = arr[i];
+            arr[i] = x;
 
-            // Recursion called
-            perm(tab, l + 1, r);
+            perm(arr, l + 1, r); //recursion
 
-            // backtrack
-            x = tab[l];
-            tab[l] = tab[i];
-            tab[i] = x;
+            x = arr[l]; //swap
+            arr[l] = arr[i];
+            arr[i] = x;
 
         }
     }

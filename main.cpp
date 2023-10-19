@@ -23,10 +23,9 @@ int main() {
                 FileReader fileReader;
 
                 if(matrix != nullptr){ //free memory if previous matrix still exist
-                    matrix->~Matrix();
+                    matrix->~Matrix(); //call destructor and free memory
                 }
 
-                //do I have to remove the previous one?
                 matrix = fileReader.read(); //read matrix data from .txt file and change pointer to it
                 break;
 
@@ -34,40 +33,41 @@ int main() {
                 Randomizer randomizer;
 
                 if(matrix != nullptr){ //free memory if previous matrix still exist
-                    matrix->~Matrix();
+                    matrix->~Matrix(); //call destructor and free memory
                 }
 
-                //do I have to remove the previous one?
-                matrix = randomizer.generate();
+                matrix = randomizer.generate(); //generate random data into the matrix and change pointer to it
 
                 break;
 
             case 3:
-                matrix->printMatrix();
+                matrix->printMatrix(); //print matrix
                 break;
 
             case 4:
                 TSPBruteForce tspBruteForce = TSPBruteForce(matrix);
 
-                int tab[matrix->nrV];
+                int *arr = new int[matrix->nrV]; //array in which we will calculate permutations
                 for (int i = 0; i < matrix->nrV; ++i) {
-                    tab[i] = i;
+                    arr[i] = i;
                 }
 
                 Timer timer;
-                timer.startTimer();
-                tspBruteForce.launch(tab,1,matrix->nrV-1);
-                double time = timer.stopTimer();
+                timer.startTimer(); //start the timer
+                tspBruteForce.launch(arr, 1, matrix->nrV - 1); //launch algorithm
+                double time = timer.stopTimer(); //stop the timer
 
-                std::cout<<"Scores:"<<std::endl;
+                std::cout<<"Scores:"<<std::endl; //print scores from algorithm
                 for (int i = 0; i < matrix->nrV; ++i) {
-                    std::cout << tspBruteForce.stringOfVerticles[i] << "->";
+                    std::cout << tspBruteForce.stringOfVerticles[i] << "->"; //string of verticles
                 }
-                std::cout << tspBruteForce.stringOfVerticles[0];
+                std::cout << tspBruteForce.stringOfVerticles[0]; //we come back to the beginning verticle
 
                 std::cout << std::endl;
-                std::cout << tspBruteForce.bestRoute << std::endl;
-                std::cout << "Required time: " << time << std::endl;
+                std::cout << tspBruteForce.bestRoute << std::endl; //print cost of most optimal route
+                std::cout << "Required time: " << time << std::endl; //print time of performing algorithm
+
+                delete[] arr; //free memory, delete array with stored permutations
 
                 break;
 
