@@ -15,6 +15,7 @@ public:
     Timer();
     void startTimer();
     double stopTimer();
+    void printTime();
     long long int readQPC();
 };
 

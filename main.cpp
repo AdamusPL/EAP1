@@ -65,7 +65,8 @@ int main() {
 
                 std::cout << std::endl;
                 std::cout << tspBruteForce.bestRoute << std::endl; //print cost of most optimal route
-                std::cout << "Required time: " << time << std::endl; //print time of performing algorithm
+                std::cout << "Required time: " << std::endl; //print time of performing algorithm
+                timer.printTime();
 
                 delete[] arr; //free memory, delete array with stored permutations
 

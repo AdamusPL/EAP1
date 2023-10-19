@@ -18,12 +18,15 @@ void Timer::startTimer(){
 
 double Timer::stopTimer(){
     elapsed = readQPC() - start;
-    std::cout << "Time [s] = " << std::fixed << std::setprecision(0) << (float)elapsed / frequency << std::endl;
-    std::cout << "Time [ms] = " << std::fixed << std::setprecision(0) << (1000.0 * elapsed) / frequency << std::endl;
-    std::cout << "Time [us] = " << std::fixed << std::setprecision(0) << (1000000.0 * elapsed) / frequency << std::endl << std::endl;
 
     double time = (1000000.0 * elapsed) / frequency;
     return time;
+}
+
+void Timer::printTime(){
+    std::cout << "Time [s] = " << std::fixed << std::setprecision(0) << (float)elapsed / frequency << std::endl;
+    std::cout << "Time [ms] = " << std::fixed << std::setprecision(0) << (1000.0 * elapsed) / frequency << std::endl;
+    std::cout << "Time [us] = " << std::fixed << std::setprecision(0) << (1000000.0 * elapsed) / frequency << std::endl << std::endl;
 }
 
 Timer::Timer() {

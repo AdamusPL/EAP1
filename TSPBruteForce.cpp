@@ -38,6 +38,7 @@ void TSPBruteForce::launch(int arr[], int l, int r){
             bestRoute = route;
         }
     }
+
     else {
 
         for (int i = l; i <= r; i++) {
