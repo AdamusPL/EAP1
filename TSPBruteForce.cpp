@@ -15,6 +15,12 @@ void TSPBruteForce::launch(int tab[], int l, int r){
     int x;
     // Base case
     if (l == r) {
+//        printing all permutations
+//        for (int i = 0; i < matrix->nrV; ++i) {
+//            std::cout<<tab[i]<<" ";
+//        }
+//        std::cout<<std::endl;
+
         for(int i = 0; i < matrix->nrV - 1; i++){
             route += matrix->adjMatrix[tab[i]][tab[i+1]];
         }

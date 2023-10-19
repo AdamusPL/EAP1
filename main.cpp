@@ -56,7 +56,7 @@ int main() {
 
                 Timer timer;
                 timer.startTimer();
-                tspBruteForce.launch(tab,0,matrix->nrV-1);
+                tspBruteForce.launch(tab,1,matrix->nrV-1);
                 double time = timer.stopTimer();
 
                 std::cout<<"Scores:"<<std::endl;
