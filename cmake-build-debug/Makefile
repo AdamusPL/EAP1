@@ -128,6 +128,30 @@ PEA1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/build
 .PHONY : PEA1/fast
 
+BranchAndBound.obj: BranchAndBound.cpp.obj
+.PHONY : BranchAndBound.obj
+
+# target to build an object file
+BranchAndBound.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/BranchAndBound.cpp.obj
+.PHONY : BranchAndBound.cpp.obj
+
+BranchAndBound.i: BranchAndBound.cpp.i
+.PHONY : BranchAndBound.i
+
+# target to preprocess a source file
+BranchAndBound.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/BranchAndBound.cpp.i
+.PHONY : BranchAndBound.cpp.i
+
+BranchAndBound.s: BranchAndBound.cpp.s
+.PHONY : BranchAndBound.s
+
+# target to generate assembly for a file
+BranchAndBound.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/BranchAndBound.cpp.s
+.PHONY : BranchAndBound.cpp.s
+
 FileReader.obj: FileReader.cpp.obj
 .PHONY : FileReader.obj
 
@@ -281,6 +305,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... PEA1
+	@echo ... BranchAndBound.obj
+	@echo ... BranchAndBound.i
+	@echo ... BranchAndBound.s
 	@echo ... FileReader.obj
 	@echo ... FileReader.i
 	@echo ... FileReader.s

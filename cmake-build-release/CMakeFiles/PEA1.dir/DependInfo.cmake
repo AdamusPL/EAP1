@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Studia/5sem/PEA/BranchAndBound.cpp" "CMakeFiles/PEA1.dir/BranchAndBound.cpp.obj" "gcc" "CMakeFiles/PEA1.dir/BranchAndBound.cpp.obj.d"
   "C:/Studia/5sem/PEA/FileReader.cpp" "CMakeFiles/PEA1.dir/FileReader.cpp.obj" "gcc" "CMakeFiles/PEA1.dir/FileReader.cpp.obj.d"
   "C:/Studia/5sem/PEA/Matrix.cpp" "CMakeFiles/PEA1.dir/Matrix.cpp.obj" "gcc" "CMakeFiles/PEA1.dir/Matrix.cpp.obj.d"
   "C:/Studia/5sem/PEA/Randomizer.cpp" "CMakeFiles/PEA1.dir/Randomizer.cpp.obj" "gcc" "CMakeFiles/PEA1.dir/Randomizer.cpp.obj.d"

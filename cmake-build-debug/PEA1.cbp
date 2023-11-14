@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Studia/5sem/PEA/BranchAndBound.cpp">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/BranchAndBound.h">
+			<Option target="PEA1"/>
+		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/FileReader.cpp">
 			<Option target="PEA1"/>
 		</Unit>
