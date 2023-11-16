@@ -88,6 +88,9 @@
 		<Unit filename="C:/Studia/5sem/PEA/BranchAndBound.h">
 			<Option target="PEA1"/>
 		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Cmp.h">
+			<Option target="PEA1"/>
+		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/FileReader.cpp">
 			<Option target="PEA1"/>
 		</Unit>
@@ -98,6 +101,12 @@
 			<Option target="PEA1"/>
 		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/Matrix.h">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Node.cpp">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Node.h">
 			<Option target="PEA1"/>
 		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/Randomizer.cpp">

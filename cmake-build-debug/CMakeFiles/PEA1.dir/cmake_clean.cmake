@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PEA1.dir/FileReader.cpp.obj.d"
   "CMakeFiles/PEA1.dir/Matrix.cpp.obj"
   "CMakeFiles/PEA1.dir/Matrix.cpp.obj.d"
+  "CMakeFiles/PEA1.dir/Node.cpp.obj"
+  "CMakeFiles/PEA1.dir/Node.cpp.obj.d"
   "CMakeFiles/PEA1.dir/Randomizer.cpp.obj"
   "CMakeFiles/PEA1.dir/Randomizer.cpp.obj.d"
   "CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj"

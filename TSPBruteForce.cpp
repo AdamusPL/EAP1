@@ -6,12 +6,12 @@
 
 TSPBruteForce::TSPBruteForce(Matrix *matrix) {
     this->matrix = matrix;
-    this->stringOfVerticles = new int [matrix->nrV];
+    this->stringOfNodes = new int [matrix->nrV];
     this->bestRoute = INT_MAX;
 }
 
 TSPBruteForce::~TSPBruteForce() {
-    delete[] stringOfVerticles;
+    delete[] stringOfNodes;
 }
 
 void TSPBruteForce::launch(int arr[], int l, int r){
@@ -33,7 +33,7 @@ void TSPBruteForce::launch(int arr[], int l, int r){
 
         if(route < bestRoute){ //if we find better route than previous one
             for (int i = 0; i < matrix->nrV; ++i) {
-                stringOfVerticles[i] = arr[i]; //save that string of verticles
+                stringOfNodes[i] = arr[i]; //save that string of verticles
             }
             bestRoute = route; //save route cost
         }

@@ -7,17 +7,16 @@
 
 
 #include "Matrix.h"
+#include <queue>
 
 class BranchAndBound {
-
+public:
     int upperBound;
-    int* stringOfVertices;
     int bestRoute;
-    bool* visited;
+    std::vector<int> solution;
     int reduceMatrix(Matrix*);
     void copyMatrix(Matrix*, Matrix*);
 
-public:
     BranchAndBound(Matrix *matrix);
     Matrix *matrix;
     ~BranchAndBound();

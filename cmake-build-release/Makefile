@@ -200,6 +200,30 @@ Matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Matrix.cpp.s
 .PHONY : Matrix.cpp.s
 
+Node.obj: Node.cpp.obj
+.PHONY : Node.obj
+
+# target to build an object file
+Node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Node.cpp.obj
+.PHONY : Node.cpp.obj
+
+Node.i: Node.cpp.i
+.PHONY : Node.i
+
+# target to preprocess a source file
+Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Node.cpp.i
+.PHONY : Node.cpp.i
+
+Node.s: Node.cpp.s
+.PHONY : Node.s
+
+# target to generate assembly for a file
+Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Node.cpp.s
+.PHONY : Node.cpp.s
+
 Randomizer.obj: Randomizer.cpp.obj
 .PHONY : Randomizer.obj
 
@@ -314,6 +338,9 @@ help:
 	@echo ... Matrix.obj
 	@echo ... Matrix.i
 	@echo ... Matrix.s
+	@echo ... Node.obj
+	@echo ... Node.i
+	@echo ... Node.s
 	@echo ... Randomizer.obj
 	@echo ... Randomizer.i
 	@echo ... Randomizer.s

@@ -3,12 +3,12 @@
 //
 
 #include "BranchAndBound.h"
+#include "Node.h"
+#include "Cmp.h"
 
 BranchAndBound::BranchAndBound(Matrix *matrix) {
     this->matrix = matrix;
-    this->stringOfVertices = new int [matrix->nrV];
     this->bestRoute = INT_MAX;
-    this->visited = new bool[matrix->nrV];
 }
 
 BranchAndBound::~BranchAndBound() {
@@ -17,80 +17,108 @@ BranchAndBound::~BranchAndBound() {
 
 void BranchAndBound::launch(Matrix *matrix) {
 
-    int lowerBound = BranchAndBound::reduceMatrix(matrix); //reducing matrix, calculating lowerBound which is sum of every reduction in row/column
-    std::cout << "Sum of reduction cost: " << lowerBound << std::endl;
+    Node* prevNode = new Node(matrix->nrV);
+    prevNode->route.push_back(0);
+    BranchAndBound::copyMatrix(prevNode->matrix,matrix);
+    prevNode->lowerBound = BranchAndBound::reduceMatrix(prevNode->matrix); //reducing matrix, calculating lowerBound which is sum of every reduction in row/column
+    prevNode->nrV = 0;
+    prevNode->level = 0;
+
+//    std::cout << "lowerBound= " << prevNode->lowerBound << std::endl;
+
+    //pair <key: lowerBound, value: Node>
+    //priority queue, sorted in ascending way by key
+    std::priority_queue<std::pair<int, Node*>, std::vector<std::pair<int, Node*>>, Cmp> priorityQueue;
 
     upperBound = -1;
 
-    for (int i = 0; i < matrix->nrV; ++i) { //fill the array with false value
-        visited[i] = false;
-    }
-
-    visited[0] = true; //we have visited first vertex
-    stringOfVertices[0] = 0; //we start from vertex nr 0
-
-    Matrix* cpy = new Matrix(matrix->nrV); //matrix which will store copy of the matrix from previous iteration
-    Matrix* saved = new Matrix(matrix->nrV); //matrix which will store matrix from current best solution from current iteration
-
-    //making the copy of the matrix to find best solution
-    BranchAndBound::copyMatrix(cpy, matrix);
+    priorityQueue.emplace(prevNode->lowerBound, prevNode);
 
     int reduction;
-    int currentCost;
-    int minCost;
+    int minCost = INT_MAX;
+    Node* bestSol;
 
-    for (int k = 0; k < matrix->nrV-1; ++k) { //current vertex from stringOfVertices
-        //you have to remember cost of previous nodes in order to come back to them, so... use STL?
-        //own binary tree?
+    while(!priorityQueue.empty()) {
 
-        minCost = INT_MAX;
+        if (priorityQueue.top().first < minCost) { //if there's Node with lower lowerBound than in last node in the best solution, DFS this Node
 
-        for (int i = 0; i < matrix->nrV; ++i) {
+            prevNode = priorityQueue.top().second; //take this Node
+            priorityQueue.pop(); //remove it from queue
 
-            if(visited[i]) continue; //if we have visited the vertex, skip to the next iteration
+            int currentMinCost = INT_MAX; //this will help finding best lowerBound from unvisited Nodes
 
-            //1. reduce size
-            for (int j = 0; j < matrix->nrV; ++j) { //filling a row and column with -1
-                //if we analyze edge (1,2), then we fill row 1. with -1 and column 2. with -1
-                matrix->adjMatrix[j][i] = -1;
-                matrix->adjMatrix[stringOfVertices[k]][j] = -1;
+            for (int i = 1; i < matrix->nrV; ++i) {
+
+                //check if we have visited this Node
+                bool visited = false;
+
+                for (int j = 0; j < prevNode->route.size(); ++j) {
+                    if(prevNode->route[j]==i){
+                        visited=true;
+                        break;
+                    }
+                }
+
+                if(visited) continue; //if yes, skip that iteration
+
+
+                Node *node = new Node(matrix->nrV);
+                node->route = prevNode->route; //copy route from previous node
+                node->nrV = i;
+                node->level = prevNode->level + 1; //we are one level down
+
+                BranchAndBound::copyMatrix(node->matrix,
+                                           prevNode->matrix); //copying matrix to save it in case you want to come back to it
+
+                node->route.push_back(i); //add this Node to route
+
+                //1. reduce size
+                for (int j = 0; j < matrix->nrV; ++j) { //filling a row and column with -1
+                    //if we analyze edge (1,2), then we fill row 1. with -1 and column 2. with -1
+                    node->matrix->adjMatrix[j][node->nrV] = -1;
+                    node->matrix->adjMatrix[prevNode->nrV][j] = -1;
+                }
+
+                //2. prevent from cycles
+                node->matrix->adjMatrix[i][0] = -1; //we don't come back to the beginning verticle (nr 0)
+
+//                std::cout << "Before reduction:" << std::endl;
+//                node->matrix->printMatrix();
+
+                //3. reduce matrix
+                reduction = BranchAndBound::reduceMatrix(node->matrix); //reduce matrix
+
+//                std::cout << "After reduction:" << std::endl;
+//                node->matrix->printMatrix();
+
+                //4. calculate lowerBound
+                node->lowerBound = prevNode->matrix->adjMatrix[prevNode->nrV][i] + prevNode->lowerBound +
+                                   reduction; //calculate the current cost
+//                std::cout << "lowerBound= " << node->lowerBound << std::endl;
+
+                priorityQueue.emplace(node->lowerBound, node); //put this node in queue
+
+                if (node->lowerBound < currentMinCost) { //if we find new best route
+                    bestSol = node;
+                    currentMinCost = node->lowerBound;
+                }
             }
 
-            //2. prevent from cycles
-            matrix->adjMatrix[i][stringOfVertices[0]] = -1; //we don't come back to the beginning verticle (nr 0)
-
-            std::cout<<"Before reduction:"<<std::endl;
-            matrix->printMatrix();
-
-            //3. reduce matrix
-            reduction = BranchAndBound::reduceMatrix(matrix); //reduce matrix
-
-            std::cout<<"After reduction:"<<std::endl;
-            matrix->printMatrix();
-
-            //4. calculate lowerBound
-            currentCost = cpy->adjMatrix[stringOfVertices[k]][i] + lowerBound + reduction; //calculate the current cost
-            std::cout<<"Current cost: "<<currentCost<<std::endl;
-
-            if(currentCost < minCost){ //if we find new best route
-
-                minCost = currentCost;
-                stringOfVertices[k+1] = i; //we add vertex to string of solution
-                BranchAndBound::copyMatrix(saved, matrix); //we save matrix of that solution
-
+            if(bestSol->level == matrix->nrV-1){ //if we visited all nodes, then it's our new solution
+                solution = bestSol->route;
+                minCost = currentMinCost;
             }
-
-            BranchAndBound::copyMatrix(matrix, cpy);
 
         }
-        lowerBound = minCost;
-        BranchAndBound::copyMatrix(cpy, saved); //copy Matrix of best solution
-        visited[stringOfVertices[k + 1]] = true; //we have visited that vertex
-        saved->printMatrix();
-        BranchAndBound::copyMatrix(matrix, cpy);
+
+        else{ //if no, we found best track
+            break;
+        }
+
     }
 
-    std::cout<<"Final cost: "<<minCost<<std::endl;
+    bestRoute = minCost;
+
 
 }
 

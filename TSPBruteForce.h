@@ -16,7 +16,7 @@ public:
     void launch(int arr[], int l, int r);
     Matrix* matrix;
 
-    int* stringOfVerticles;
+    int* stringOfNodes;
     int bestRoute;
 };
 
