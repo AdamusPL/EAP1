@@ -7,12 +7,16 @@
 
 
 #include "Matrix.h"
+#include "Timer.h"
+#include "Node.h"
+#include "Cmp.h"
 #include <queue>
 
 class BranchAndBound {
 public:
     int upperBound;
     int bestRoute;
+    std::priority_queue<std::pair<int, Node*>, std::vector<std::pair<int, Node*>>, Cmp> priorityQueue;
     std::vector<int> solution;
     int reduceMatrix(Matrix*);
     void copyMatrix(Matrix*, Matrix*);
@@ -21,7 +25,7 @@ public:
     Matrix *matrix;
     ~BranchAndBound();
 
-    void launch(Matrix*);
+    bool launch(Matrix*, Timer);
 };
 
 

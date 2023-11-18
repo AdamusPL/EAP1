@@ -12,10 +12,13 @@ BranchAndBound::BranchAndBound(Matrix *matrix) {
 }
 
 BranchAndBound::~BranchAndBound() {
-
+    while(!priorityQueue.empty()){
+        delete priorityQueue.top().second;
+        priorityQueue.pop();
+    }
 }
 
-void BranchAndBound::launch(Matrix *matrix) {
+bool BranchAndBound::launch(Matrix *matrix, Timer timer) {
 
     Node* prevNode = new Node(matrix->nrV);
     prevNode->route.push_back(0);
@@ -28,22 +31,47 @@ void BranchAndBound::launch(Matrix *matrix) {
 
     //pair <key: lowerBound, value: Node>
     //priority queue, sorted in ascending way by key
-    std::priority_queue<std::pair<int, Node*>, std::vector<std::pair<int, Node*>>, Cmp> priorityQueue;
+    std::priority_queue<std::pair<int, Node*>, std::vector<std::pair<int, Node*>>, Cmp> priorityQueueCpy;
 
-    upperBound = -1;
 
-    priorityQueue.emplace(prevNode->lowerBound, prevNode);
+    priorityQueue.emplace(prevNode->lowerBound, prevNode); //put node 0 to queue
 
     int reduction;
-    int minCost = INT_MAX;
-    Node* bestSol;
+    int minCost = INT_MAX; //this will store best minCost of full path
+    Node* bestSol; //this will store last best solution
+//    double combinations = 0;
+//    double silnia17 = 355687428096000;
 
     while(!priorityQueue.empty()) {
+
+//        if(timer.stopTimer()/1000000.0 > 300){
+//            std::cout<<"Nie wykonano do konca w 5 minut"<<std::endl;
+//            std::cout<<"Rozwazone przypadki: "<<combinations/silnia17;
+//            return false;
+//        }
 
         if (priorityQueue.top().first < minCost) { //if there's Node with lower lowerBound than in last node in the best solution, DFS this Node
 
             prevNode = priorityQueue.top().second; //take this Node
             priorityQueue.pop(); //remove it from queue
+
+            while(!priorityQueue.empty()) { //remove not worth more searching solutions
+                if (priorityQueue.top().first < minCost) {
+                    priorityQueueCpy.push(priorityQueue.top());
+                    priorityQueue.pop();
+                }
+
+                else{
+                    delete priorityQueue.top().second; //free memory
+                    priorityQueue.pop();
+                }
+            }
+
+            priorityQueue = priorityQueueCpy;
+
+            while(!priorityQueueCpy.empty()){
+                priorityQueueCpy.pop();
+            }
 
             int currentMinCost = INT_MAX; //this will help finding best lowerBound from unvisited Nodes
 
@@ -107,6 +135,7 @@ void BranchAndBound::launch(Matrix *matrix) {
             if(bestSol->level == matrix->nrV-1){ //if we visited all nodes, then it's our new solution
                 solution = bestSol->route;
                 minCost = currentMinCost;
+//                combinations++;
             }
 
         }
@@ -118,7 +147,7 @@ void BranchAndBound::launch(Matrix *matrix) {
     }
 
     bestRoute = minCost;
-
+    return true;
 
 }
 

@@ -68,6 +68,7 @@ int main() {
                 TSPBruteForce *tspBruteForce = new TSPBruteForce(matrix);
                 Timer timer;
                 int *arr = new int[matrix->nrV]; //array in which we will calculate permutations
+                bool endedOnTime;
 
                 int method = 3;
                 std::cout << "1. Brute force" << std::endl;
@@ -105,8 +106,15 @@ int main() {
                     case 2:
 
                         timer.startTimer();
-                        branchAndBound->launch(matrix);
-                        timer.stopTimer();
+                        endedOnTime=branchAndBound->launch(matrix, timer);
+
+                        if(endedOnTime) {
+                            timer.stopTimer();
+                        }
+
+                        else{
+                            break;
+                        }
 
                         std::cout << "Scores:" << std::endl; //print scores from algorithm
                         for (int i = 0; i < branchAndBound->solution.size(); ++i) {
