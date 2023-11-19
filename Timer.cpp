@@ -16,10 +16,10 @@ void Timer::startTimer(){
     start = readQPC(); //number of ticks since the last restart of the system
 }
 
-double Timer::stopTimer(){
+long long Timer::stopTimer(){
     elapsed = readQPC() - start; //read ticks once again and subtract from read ticks at the start
 
-    double time = (1000000.0 * elapsed) / frequency;
+    long long time = (1000000.0 * elapsed) / frequency;
     return time;
 }
 

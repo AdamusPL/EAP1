@@ -97,10 +97,22 @@
 		<Unit filename="C:/Studia/5sem/PEA/FileReader.h">
 			<Option target="PEA1"/>
 		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/FileWriter.cpp">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/FileWriter.h">
+			<Option target="PEA1"/>
+		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/Matrix.cpp">
 			<Option target="PEA1"/>
 		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/Matrix.h">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Menu.cpp">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Menu.h">
 			<Option target="PEA1"/>
 		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/Node.cpp">
@@ -119,6 +131,12 @@
 			<Option target="PEA1"/>
 		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/TSPBruteForce.h">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Tests.cpp">
+			<Option target="PEA1"/>
+		</Unit>
+		<Unit filename="C:/Studia/5sem/PEA/Tests.h">
 			<Option target="PEA1"/>
 		</Unit>
 		<Unit filename="C:/Studia/5sem/PEA/Timer.cpp">

@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.25"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PEA1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PEA1-Release-d62777079f83a3eb1e29.json",
+					"jsonFile" : "target-PEA1-Debug-dcd616b7595be470d3c2.json",
 					"name" : "PEA1",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Studia/5sem/PEA/cmake-build-release",
+		"build" : "C:/Studia/5sem/PEA/cmake-build-debug",
 		"source" : "C:/Studia/5sem/PEA"
 	},
 	"version" : 

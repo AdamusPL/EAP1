@@ -180,6 +180,48 @@ CMakeFiles/PEA1.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PEA1.dir/Node.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Studia\5sem\PEA\Node.cpp -o CMakeFiles\PEA1.dir\Node.cpp.s
 
+CMakeFiles/PEA1.dir/Tests.cpp.obj: CMakeFiles/PEA1.dir/flags.make
+CMakeFiles/PEA1.dir/Tests.cpp.obj: C:/Studia/5sem/PEA/Tests.cpp
+CMakeFiles/PEA1.dir/Tests.cpp.obj: CMakeFiles/PEA1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Studia\5sem\PEA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/PEA1.dir/Tests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PEA1.dir/Tests.cpp.obj -MF CMakeFiles\PEA1.dir\Tests.cpp.obj.d -o CMakeFiles\PEA1.dir\Tests.cpp.obj -c C:\Studia\5sem\PEA\Tests.cpp
+
+CMakeFiles/PEA1.dir/Tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PEA1.dir/Tests.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Studia\5sem\PEA\Tests.cpp > CMakeFiles\PEA1.dir\Tests.cpp.i
+
+CMakeFiles/PEA1.dir/Tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PEA1.dir/Tests.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Studia\5sem\PEA\Tests.cpp -o CMakeFiles\PEA1.dir\Tests.cpp.s
+
+CMakeFiles/PEA1.dir/Menu.cpp.obj: CMakeFiles/PEA1.dir/flags.make
+CMakeFiles/PEA1.dir/Menu.cpp.obj: C:/Studia/5sem/PEA/Menu.cpp
+CMakeFiles/PEA1.dir/Menu.cpp.obj: CMakeFiles/PEA1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Studia\5sem\PEA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/PEA1.dir/Menu.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PEA1.dir/Menu.cpp.obj -MF CMakeFiles\PEA1.dir\Menu.cpp.obj.d -o CMakeFiles\PEA1.dir\Menu.cpp.obj -c C:\Studia\5sem\PEA\Menu.cpp
+
+CMakeFiles/PEA1.dir/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PEA1.dir/Menu.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Studia\5sem\PEA\Menu.cpp > CMakeFiles\PEA1.dir\Menu.cpp.i
+
+CMakeFiles/PEA1.dir/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PEA1.dir/Menu.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Studia\5sem\PEA\Menu.cpp -o CMakeFiles\PEA1.dir\Menu.cpp.s
+
+CMakeFiles/PEA1.dir/FileWriter.cpp.obj: CMakeFiles/PEA1.dir/flags.make
+CMakeFiles/PEA1.dir/FileWriter.cpp.obj: C:/Studia/5sem/PEA/FileWriter.cpp
+CMakeFiles/PEA1.dir/FileWriter.cpp.obj: CMakeFiles/PEA1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Studia\5sem\PEA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/PEA1.dir/FileWriter.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PEA1.dir/FileWriter.cpp.obj -MF CMakeFiles\PEA1.dir\FileWriter.cpp.obj.d -o CMakeFiles\PEA1.dir\FileWriter.cpp.obj -c C:\Studia\5sem\PEA\FileWriter.cpp
+
+CMakeFiles/PEA1.dir/FileWriter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PEA1.dir/FileWriter.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Studia\5sem\PEA\FileWriter.cpp > CMakeFiles\PEA1.dir\FileWriter.cpp.i
+
+CMakeFiles/PEA1.dir/FileWriter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PEA1.dir/FileWriter.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Studia\5sem\PEA\FileWriter.cpp -o CMakeFiles\PEA1.dir\FileWriter.cpp.s
+
 # Object files for target PEA1
 PEA1_OBJECTS = \
 "CMakeFiles/PEA1.dir/main.cpp.obj" \
@@ -189,7 +231,10 @@ PEA1_OBJECTS = \
 "CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj" \
 "CMakeFiles/PEA1.dir/Timer.cpp.obj" \
 "CMakeFiles/PEA1.dir/BranchAndBound.cpp.obj" \
-"CMakeFiles/PEA1.dir/Node.cpp.obj"
+"CMakeFiles/PEA1.dir/Node.cpp.obj" \
+"CMakeFiles/PEA1.dir/Tests.cpp.obj" \
+"CMakeFiles/PEA1.dir/Menu.cpp.obj" \
+"CMakeFiles/PEA1.dir/FileWriter.cpp.obj"
 
 # External object files for target PEA1
 PEA1_EXTERNAL_OBJECTS =
@@ -202,11 +247,14 @@ PEA1.exe: CMakeFiles/PEA1.dir/TSPBruteForce.cpp.obj
 PEA1.exe: CMakeFiles/PEA1.dir/Timer.cpp.obj
 PEA1.exe: CMakeFiles/PEA1.dir/BranchAndBound.cpp.obj
 PEA1.exe: CMakeFiles/PEA1.dir/Node.cpp.obj
+PEA1.exe: CMakeFiles/PEA1.dir/Tests.cpp.obj
+PEA1.exe: CMakeFiles/PEA1.dir/Menu.cpp.obj
+PEA1.exe: CMakeFiles/PEA1.dir/FileWriter.cpp.obj
 PEA1.exe: CMakeFiles/PEA1.dir/build.make
 PEA1.exe: CMakeFiles/PEA1.dir/linkLibs.rsp
 PEA1.exe: CMakeFiles/PEA1.dir/objects1
 PEA1.exe: CMakeFiles/PEA1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Studia\5sem\PEA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable PEA1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Studia\5sem\PEA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable PEA1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\PEA1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

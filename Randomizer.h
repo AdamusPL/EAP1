@@ -11,7 +11,7 @@
 
 class Randomizer {
 public:
-    Matrix* generate();
+    Matrix* generate(int);
 };
 
 

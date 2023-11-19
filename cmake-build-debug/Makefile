@@ -176,6 +176,30 @@ FileReader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/FileReader.cpp.s
 .PHONY : FileReader.cpp.s
 
+FileWriter.obj: FileWriter.cpp.obj
+.PHONY : FileWriter.obj
+
+# target to build an object file
+FileWriter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/FileWriter.cpp.obj
+.PHONY : FileWriter.cpp.obj
+
+FileWriter.i: FileWriter.cpp.i
+.PHONY : FileWriter.i
+
+# target to preprocess a source file
+FileWriter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/FileWriter.cpp.i
+.PHONY : FileWriter.cpp.i
+
+FileWriter.s: FileWriter.cpp.s
+.PHONY : FileWriter.s
+
+# target to generate assembly for a file
+FileWriter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/FileWriter.cpp.s
+.PHONY : FileWriter.cpp.s
+
 Matrix.obj: Matrix.cpp.obj
 .PHONY : Matrix.obj
 
@@ -199,6 +223,30 @@ Matrix.s: Matrix.cpp.s
 Matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Matrix.cpp.s
 .PHONY : Matrix.cpp.s
+
+Menu.obj: Menu.cpp.obj
+.PHONY : Menu.obj
+
+# target to build an object file
+Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Menu.cpp.obj
+.PHONY : Menu.cpp.obj
+
+Menu.i: Menu.cpp.i
+.PHONY : Menu.i
+
+# target to preprocess a source file
+Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Menu.cpp.i
+.PHONY : Menu.cpp.i
+
+Menu.s: Menu.cpp.s
+.PHONY : Menu.s
+
+# target to generate assembly for a file
+Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Menu.cpp.s
+.PHONY : Menu.cpp.s
 
 Node.obj: Node.cpp.obj
 .PHONY : Node.obj
@@ -272,6 +320,30 @@ TSPBruteForce.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/TSPBruteForce.cpp.s
 .PHONY : TSPBruteForce.cpp.s
 
+Tests.obj: Tests.cpp.obj
+.PHONY : Tests.obj
+
+# target to build an object file
+Tests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Tests.cpp.obj
+.PHONY : Tests.cpp.obj
+
+Tests.i: Tests.cpp.i
+.PHONY : Tests.i
+
+# target to preprocess a source file
+Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Tests.cpp.i
+.PHONY : Tests.cpp.i
+
+Tests.s: Tests.cpp.s
+.PHONY : Tests.s
+
+# target to generate assembly for a file
+Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PEA1.dir\build.make CMakeFiles/PEA1.dir/Tests.cpp.s
+.PHONY : Tests.cpp.s
+
 Timer.obj: Timer.cpp.obj
 .PHONY : Timer.obj
 
@@ -335,9 +407,15 @@ help:
 	@echo ... FileReader.obj
 	@echo ... FileReader.i
 	@echo ... FileReader.s
+	@echo ... FileWriter.obj
+	@echo ... FileWriter.i
+	@echo ... FileWriter.s
 	@echo ... Matrix.obj
 	@echo ... Matrix.i
 	@echo ... Matrix.s
+	@echo ... Menu.obj
+	@echo ... Menu.i
+	@echo ... Menu.s
 	@echo ... Node.obj
 	@echo ... Node.i
 	@echo ... Node.s
@@ -347,6 +425,9 @@ help:
 	@echo ... TSPBruteForce.obj
 	@echo ... TSPBruteForce.i
 	@echo ... TSPBruteForce.s
+	@echo ... Tests.obj
+	@echo ... Tests.i
+	@echo ... Tests.s
 	@echo ... Timer.obj
 	@echo ... Timer.i
 	@echo ... Timer.s

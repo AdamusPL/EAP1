@@ -5,12 +5,9 @@
 #include "Randomizer.h"
 
 //generating random complete graph
-Matrix* Randomizer::generate() {
+Matrix* Randomizer::generate(int N) {
 
-    int N;
     int distance;
-    std::cout<<"Enter N"<<std::endl;
-    std::cin>>N;
     Matrix *matrix = new Matrix(N);
 
     srand(time(NULL)); //initialize seed of random number generator
