@@ -117,7 +117,7 @@ void Menu::bruteForce(bool isAutomatic){
     FileWriter fileWriter = FileWriter(isAutomatic);
     int numberOfInstances = 1;
     int N;
-    double time;
+    long time;
 
     if(isAutomatic){
         std::cout<<"Enter N:"<<std::endl;
@@ -166,7 +166,7 @@ void Menu::bruteForce(bool isAutomatic){
     }
 
     if(isAutomatic){
-        fileWriter.write(N,"BF");
+        fileWriter.write(N,"BF",N);
     }
 
 }
@@ -176,15 +176,23 @@ void Menu::branchAndBound(bool isAutomatic){
     FileWriter fileWriter = FileWriter(isAutomatic);
     int numberOfInstances = 1;
     int N;
-    double time;
+    long time;
+    double didntEnd;
 
     if(isAutomatic){
         std::cout<<"Enter N:"<<std::endl;
         std::cin>>N;
         numberOfInstances = 100;
+        didntEnd=0;
     }
 
     for (int i = 0; i < numberOfInstances; ++i) {
+
+        if(isAutomatic){ //if it's automatic test, we need to generate random matrix
+            Randomizer randomizer;
+            matrix = randomizer.generate(N);
+            std::cout<<"iteration: "<<i<<std::endl;
+        }
 
         BranchAndBound *branchAndBound = new BranchAndBound(matrix);
         bool endedOnTime;
@@ -198,7 +206,8 @@ void Menu::branchAndBound(bool isAutomatic){
         }
 
         else{ //we don't care about the time
-            return;
+            didntEnd++;
+            time=0;
         }
 
         if(!isAutomatic) { //if it's manual test, then print scores
@@ -225,7 +234,8 @@ void Menu::branchAndBound(bool isAutomatic){
     }
 
     if(isAutomatic){
-        fileWriter.write(N,"BaB");
+        std::cout<<"Skipped: "<<didntEnd/100<<std::endl;
+        fileWriter.write(N,"BaB",N-didntEnd);
     }
 
 

@@ -6,24 +6,24 @@
 
 FileWriter::FileWriter(bool isAutomatic){
     if(isAutomatic) {
-        results = new int[100];
+        results = new long[100];
     }
 }
 
-void FileWriter::write(int N, std::string type){
+void FileWriter::write(int N, std::string type, int done){
 
     std::fstream file;
     std::string filename = type+"_"+std::to_string(N)+".txt";
 
     file.open(filename, std::ios::out);
-    double avg = 0;
+    long avg = 0;
 
     for (int i = 0; i < 100; i++) {
         file << results[i] << std::endl;
         avg += results[i];
     }
 
-    avg = avg / 100;
+    avg = avg / done;
 
     file << std::endl;
 

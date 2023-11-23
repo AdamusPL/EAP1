@@ -37,26 +37,23 @@ bool BranchAndBound::launch(Matrix *matrix, Timer timer) {
     priorityQueue.emplace(prevNode->lowerBound, prevNode); //put node 0 to queue
 
     int reduction;
-    int minCost = INT_MAX; //this will store best minCost of full path
+    int upperBound = INT_MAX; //this will store best upperBound of full path
     Node* bestSol; //this will store last best solution
-//    double combinations = 0;
-//    double silnia17 = 355687428096000;
 
     while(!priorityQueue.empty()) {
 
-//        if(timer.stopTimer()/1000000.0 > 300){
-//            std::cout<<"Nie wykonano do konca w 5 minut"<<std::endl;
-//            std::cout<<"Rozwazone przypadki: "<<combinations/silnia17;
-//            return false;
-//        }
+        if(timer.stopTimer()/1000000.0 > 120){
+            std::cout<<"Nie wykonano do konca w 2 minuty"<<std::endl;
+            return false;
+        }
 
-        if (priorityQueue.top().first < minCost) { //if there's Node with lower lowerBound than in last node in the best solution, DFS this Node
+        if (priorityQueue.top().first < upperBound) { //if there's Node with lower lowerBound than in last node in the best solution, DFS this Node
 
             prevNode = priorityQueue.top().second; //take this Node
             priorityQueue.pop(); //remove it from queue
 
             while(!priorityQueue.empty()) { //remove not worth more searching solutions
-                if (priorityQueue.top().first < minCost) {
+                if (priorityQueue.top().first < upperBound) {
                     priorityQueueCpy.push(priorityQueue.top());
                     priorityQueue.pop();
                 }
@@ -134,8 +131,7 @@ bool BranchAndBound::launch(Matrix *matrix, Timer timer) {
 
             if(bestSol->level == matrix->nrV-1){ //if we visited all nodes, then it's our new solution
                 solution = bestSol->route;
-                minCost = currentMinCost;
-//                combinations++;
+                upperBound = currentMinCost;
             }
 
         }
@@ -146,7 +142,7 @@ bool BranchAndBound::launch(Matrix *matrix, Timer timer) {
 
     }
 
-    bestRoute = minCost;
+    bestRoute = upperBound;
     return true;
 
 }

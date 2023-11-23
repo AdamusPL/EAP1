@@ -14,7 +14,7 @@ public:
     long long int frequency, start, elapsed;
     Timer();
     void startTimer();
-    long long stopTimer();
+    long stopTimer();
     void printTime();
     long long int readQPC();
 };

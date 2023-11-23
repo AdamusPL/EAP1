@@ -11,8 +11,8 @@
 class FileWriter {
 public:
     FileWriter(bool);
-    int *results;
-    void write(int, std::string);
+    long *results;
+    void write(int, std::string, int);
 };
 
 
