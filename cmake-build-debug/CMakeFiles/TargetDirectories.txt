@@ -1,3 +1,0 @@
-C:/Studia/5sem/PEA/cmake-build-debug/CMakeFiles/PEA1.dir
-C:/Studia/5sem/PEA/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Studia/5sem/PEA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
